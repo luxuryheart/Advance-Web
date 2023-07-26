@@ -43,6 +43,7 @@ expressApp.use((req, res, next) =>{
 //เรียกใชUเมธอด get เพื่อตรวจสอบพาธที่ส]งมาพรUอมกับ HTTP Request โดยกำหนด Endpoint
 expressApp.get('/api/resource', function(req, res){
  Students.find({id:"B6318215"})
+ 
  .then(users => {
  res.json(users);
  })
