@@ -11,4 +11,4 @@
     1. npm install -g @angular/cli
     2. ng --version” 
     3. ng new lab1-angular-app **สร้าง Directory**
-    4. ng serve --open **รัน app**
+    4. ng serve --open **รัน app Angular**

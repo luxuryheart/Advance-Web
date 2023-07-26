@@ -6,6 +6,7 @@ const config = {
  autoIndex: true,
  useNewUrlParser: true,
  useUnifiedTopology: true
+ 
 };
 var Schema = require("mongoose").Schema;
 const userSchema = Schema({
