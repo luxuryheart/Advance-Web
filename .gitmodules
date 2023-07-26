@@ -1,0 +1,3 @@
+[submodule "lab1/lab1/lab1-angular-app"]
+	path = lab1/lab1/lab1-angular-app
+	url = https://github.com/luxuryheart/Advance-Web.git
