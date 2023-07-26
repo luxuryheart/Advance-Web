@@ -1,7 +1,7 @@
 //โหลดโมดูล express จากนั้นเก็บผลลัพธ:ลงในตัวแปร expressFunction
 const expressFunction = require('express');
 const mongoose = require('mongoose');
-const url = 'mongodb://127.0.0.1:27017/university';
+const url = 'mongodb://localhost:27017/university';
 const config = {
  autoIndex: true,
  useNewUrlParser: true,
@@ -42,8 +42,7 @@ expressApp.use((req, res, next) =>{
 })
 //เรียกใชUเมธอด get เพื่อตรวจสอบพาธที่ส]งมาพรUอมกับ HTTP Request โดยกำหนด Endpoint
 expressApp.get('/api/resource', function(req, res){
- Students.find({id:"B6318215"})
- 
+ Students.find({id:"B5111299"})
  .then(users => {
  res.json(users);
  })
