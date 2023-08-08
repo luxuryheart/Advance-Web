@@ -1,0 +1,26 @@
+<h2>Lab #2: 523419</h2>
+<h5>Title description, March 26, 2022</h5>
+<div class="card">
+  <div class="card-body">
+    <h4 class="card-title">Event Binding</h4>
+    <button type="button" class="btn btn-primary btn-lg btn-block" (click)="onUserClick($event)">
+      Please Click
+    </button>
+    <button type="button" class="btn btn-secondary btn-lg btn-block" (dblclick)="onUserDbclick($event)">
+      Please Double Click
+    </button>
+  </div>
+</div>
+
+<br />
+<div class="card">
+  <div class="card-body">
+    <h4 class="card-title">Two-way Binding</h4>
+    <div class="form-group">
+      <textarea [(ngModel)]="comment" class="form-control" rows="5" id="comment"></textarea
+      ><br />
+      <label for="comment">Comment: {{comment}}</label>
+    </div>
+  </div>
+</div>
+
