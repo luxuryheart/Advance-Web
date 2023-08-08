@@ -1,5 +1,8 @@
 **#Advance-Web**
 
+* git config --global user.name "Your Name"
+* git config --global user.email you@example.com
+
 ## > Lab.1 
 * Express install
     **ใส่คำสั่ง npm i ไปที่ terminal**
