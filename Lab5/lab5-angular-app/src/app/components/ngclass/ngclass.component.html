@@ -1,0 +1,12 @@
+<div class="card">
+  <div class="card-header bg-secondary text-white">
+    <div class="float-start">ngClass Directive</div>
+    <button type="button" (click)="ngClassMethod()" class="btn btn-sm float-end"
+        [ngClass]="{'btn-danger': status, 'btn-primary': !status}">Click</button>
+  </div>
+  <div class="card-body" [ngClass]="{'alert alert-danger rounded-0 border-0 mb-0': status}">
+    <div>
+        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Soluta quam quasi eveniet consequuntur harum corrupti, vitae fugit? Minus eius excepturi tenetur reiciendis asperiores corrupti ipsam unde cumque, quibusdam, praesentium dolore!
+    </div>
+  </div>
+</div>

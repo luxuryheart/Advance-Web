@@ -1,0 +1,12 @@
+<div class="card">
+    <div class="card-header bg-secondary text-white">
+      <div class="float-start">ngIf Directive</div>
+      <button type="button" class="btn btn-primary btn-sm float-end"
+          (click)="onClick()">{{ show ? 'hide': 'show' }}</button>
+    </div>
+    <div class="card-body" *ngIf="show">
+      <div>
+          Lorem ipsum dolor sit amet consectetur, adipisicing elit. Soluta quam quasi eveniet consequuntur harum corrupti, vitae fugit? Minus eius excepturi tenetur reiciendis asperiores corrupti ipsam unde cumque, quibusdam, praesentium dolore!
+      </div>
+    </div>
+  </div>  
