@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 
-import { ProductsService } from 'src/app/services/products.service';
+import { ProductsService } from '../../services/products.service'
 
 @Component({
   selector: 'app-addproduct',
@@ -10,10 +10,10 @@ import { ProductsService } from 'src/app/services/products.service';
 })
 export class AddproductComponent implements OnInit {
 
-  productType: string[] = ['CPU', 'RAM', 'HDD', 'Mainboard'];
+  productType: string[] = ['CPU','RAM','HDD','Mainboard'];
 
   productForm = new FormGroup({
-    type: new FormControl('', [Validators.required]),
+    type: new FormControl('',[Validators.required]),
     id: new FormControl('', [Validators.required]),
     name: new FormControl('', [Validators.required]),
     detail: new FormControl('', [Validators.required]),
@@ -21,52 +21,44 @@ export class AddproductComponent implements OnInit {
     price: new FormControl('', [Validators.required]),
     file: new FormControl('', [Validators.required]),
     img: new FormControl('', [Validators.required]),
-  })
+  });
 
   previewLoaded: boolean = false;
 
   constructor(private ps: ProductsService) { }
 
   ngOnInit(): void {
-      
   }
 
-  addProduct() {
+  addProduct(){
     this.ps.addProduct(this.productForm.value).subscribe(
       data => {
-        console.log(data);
         alert('Product added successfully');
         this.productForm.reset();
       },
-        err => {
-          console.log(err);
-        }
-    )
+      err => {
+        console.log(err);
+      }
+    );
   }
 
-  onChangeImg(e:any) {
-    if (e.target.files && e.target.files.length > 0) {
+  onChangeImg(e:any){
+    if(e.target.files.length>0){
       const file = e.target.files[0];
-      var pattern = /image-*/;
       const reader = new FileReader();
-      if (!file.type.match(pattern)) {
-        alert('invalid format')
-        this.productForm.reset();
-      } else {
-        reader.readAsDataURL(file);
-        reader.onload = () => {
-          this.previewLoaded = true;
-          this.productForm.patchValue({
-            img: reader.result?.toString()
-          })
-        }
+      reader.readAsDataURL(file);
+      reader.onload = () => {
+        this.previewLoaded = true;
+        this.productForm.patchValue({
+          img: reader.result?.toString()
+        })
       }
     }
   }
 
   resetForm(){
     this.productForm.reset();
-    this.previewLoaded = false;                                                                            
+    this.previewLoaded = false;
   }
 
 }

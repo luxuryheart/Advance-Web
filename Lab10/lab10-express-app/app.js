@@ -84,7 +84,7 @@ const getProducts = () => {
 //     "type": "cpu",
 //     "id": "100001",
 //     "name": "Intel Core i7 Den 10th",
-//     "detail": "The ntel Core i7-10750H is a high-end processor for labtops with six cores based on the Comet Lake architecture",
+//     "detail": "The Intel Core i7-10750H is a high-end processor for labtops with six cores based on the Comet Lake architecture",
 //     "quantity": 10,
 //     "price": 10,
 //     "file": "testfile",
