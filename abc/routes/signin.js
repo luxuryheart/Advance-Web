@@ -46,7 +46,30 @@ const findUser = (stdid) => {
     })   
 }
 
+// 2. หาผู้ใช้แบบไม่ต้องตั้งเงื่อไข if
+router.post('/signin', async (req, res) => {
+    const playload = {
+        stdid: req.body.stdid,
+        password: req.body.password
+    }
+    
+    const student = await students.find((item) => playload.stdid === item.stdid);
+
+    if (!student) {
+        return res.status(400).send('ไม่พบผู้ใช้')
+    }
+    
+    const loginStatus = await bcrypt.compare(playload.password, student.password)
+    const status = loginStatus
+
+    if (status) {
+        const token = await jwt.sign(student, key, {expiresIn: '1d'});
+        res.status(201).json({student, token, status});
+    } else {
+        return res.status(400).send('รหัสผ่านไม่ตรงกัน');
+    }
 
 
+})
 
 module.exports = router;
